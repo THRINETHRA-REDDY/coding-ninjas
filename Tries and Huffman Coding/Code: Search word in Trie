@@ -32,12 +32,12 @@ public class Trie {
 	{
 		if(word.length()==0)
 		{
-			if(root.isTerminating==true)
+			if(root.isTerminating==true)//this is for terminal node
 			{
 				return true;
 			}
 			else
-			{
+			{,if word length is zero and is terminal then it functions accordingly
 				return false;
 			}
 		}
