@@ -1,0 +1,72 @@
+Print Keypad Combinations Code
+Send Feedback
+Given an integer n, using phone keypad find out and print all the possible strings that can be made using digits of input n.
+Note : The order of strings are not important. Just print different strings in new lines.
+Input Format :
+Integer n
+Output Format :
+All possible strings in different lines
+Constraints :
+1 <= n <= 10^6
+Sample Input:
+23
+Sample Output:
+ad
+ae
+af
+bd
+be
+bf
+cd
+ce
+cf
+
+
+
+public class solution {
+
+	public static void printKeypad(int input){
+		ozone(input,"");
+		// Write your code here
+		
+	}
+	public static void ozone(int s,String a)
+	{
+		if(s==0)
+		{
+			System.out.println(a);
+			return;
+		}
+		int n=s/10;
+		int b=s%10;
+		String z=helper(b);
+		for(int i=0;i<z.length();i++)
+		{
+			String[] get=new String[2*z.length()];
+			ozone(n,z.charAt(i)+a);
+		}
+		
+	}
+	public static String helper(int newN){
+        if(newN==2)
+            return "abc";
+        if(newN==3)
+            return "def";
+        if(newN==4)
+            return "ghi";
+        if(newN==5)
+            return "jkl";
+        if(newN==6)
+            return "mno";
+        if(newN==7)
+            return "pqrs";
+        if(newN==8)
+            return "tuv";
+        if(newN==9)
+            return "wxyz";
+        else
+            return "";
+
+
+    }
+}
